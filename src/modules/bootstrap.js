@@ -9,7 +9,7 @@ let ConfigPropertiesNames = {
     PORT: "port"
 };  
 
-var resources = []; 
+var modulesInitialized = []; 
 var Configuration =  {}
 var app = {};
 
@@ -53,11 +53,19 @@ class AppBootstrap {
 
         modules.forEach((mod) =>  {
             let moduleBoot = require(mod)
+            //It creates a instance of module
             let moduleInstance = new moduleBoot(Configuration)
 
-            if (moduleBoot.RESOURCE)
-                resources[moduleBoot.RESOURCE] =  moduleInstance.getResource()
+            if (moduleInstance)
+                modules.add({
+                    ModuleName:  mod,
+                    ModuleIntsance: moduleInstance}); 
+
         })
+    }
+
+    static getModules() {
+        return modules
     }
 
     startService() {

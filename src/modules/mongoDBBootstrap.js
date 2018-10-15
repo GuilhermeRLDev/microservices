@@ -24,6 +24,10 @@ class MongoDBBootstrap {
             }) 
     }
 
+    static checkHealth() {
+        return this.db != null 
+    }
+
     static getDB() {
         return this.db
     }
@@ -57,8 +61,9 @@ class MongoDBBootstrap {
 
     fallBack(err) {
         console.log("Please check your database connection:"+ err, Configuration[MongoDBPropertiesName.DBPATH])
-    }
 
+    }
+    
     startConnection() {
         return new Promise((fullFill, refused) => {
             MongoClient.connect(Configuration[MongoDBPropertiesName.DBPATH], (err, db) => {

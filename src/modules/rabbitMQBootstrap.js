@@ -31,6 +31,10 @@ class RabbitMQBootstrap {
         this.conn = conn
     }
 
+    static checkHealth() {
+        return this.conn !== null;
+    }
+
     createCommand() {
         let command = CommandsFactory.getOrCreate("Starting service" + Configuration[RabbitMQPropertiesName.MESSAGE_SERVER])
             .run(this.startConnection)
