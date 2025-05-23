@@ -16,3 +16,4 @@ env_logger = "0.10"
 actix-web = "4"
 actix-multipart = "0.6" # Added actix-multipart
 uuid = { version = "1.0", features = ["v4"] } # Added uuid with v4 feature
+futures-util = "0.3"
