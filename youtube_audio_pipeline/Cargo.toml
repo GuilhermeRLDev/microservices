@@ -14,6 +14,6 @@ clap = { version = "4.0", features = ["derive"] } # Will be removed or repurpose
 log = "0.4"
 env_logger = "0.10"
 actix-web = "4"
-actix-multipart = "0.6" # Added actix-multipart
-uuid = { version = "1.0", features = ["v4"] } # Added uuid with v4 feature
-futures-util = "0.3"
+actix-multipart = "0.6" 
+uuid = { version = "1.0", features = ["v4"] } 
+futures-util = "0.3" # Added futures-util dependency

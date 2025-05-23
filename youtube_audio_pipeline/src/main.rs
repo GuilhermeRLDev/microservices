@@ -21,7 +21,7 @@ use serde::Deserialize;
 
 // Actix-multipart import
 use actix_multipart::Multipart;
-use futures_util::TryStreamExt; 
+use futures_util::stream::TryStreamExt; // Changed import path
 
 // UUID import
 use uuid::Uuid;
