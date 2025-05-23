@@ -1,5 +1,5 @@
 # Stage 1: Builder
-FROM rust:1.79-slim-bullseye AS builder
+FROM rust:1.82-slim-bullseye AS builder
 
 # Create appuser on builder stage for consistent ownership (optional but good practice)
 RUN useradd --create-home --shell /bin/bash appuser
@@ -49,7 +49,7 @@ EXPOSE 8080
 ENV RUST_LOG="info"
 ENV KAFKA_BROKERS="localhost:9092"
 ENV KAFKA_TOPIC="youtube_audio"
-ENV APP_PORT="8080"
+ENV APP_PORT="8080" # Though Actix is hardcoded to 8080 currently
 
 # Command to run the application
 CMD ["./youtube_audio_pipeline"]
