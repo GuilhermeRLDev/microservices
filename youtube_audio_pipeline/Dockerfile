@@ -57,7 +57,7 @@ EXPOSE 8080
 ENV RUST_LOG="info"
 ENV KAFKA_BROKERS="localhost:9092"
 ENV KAFKA_TOPIC="youtube_audio"
-ENV APP_PORT="8080" # Though Actix is hardcoded to 8080 currently
+ENV APP_PORT="8080" 
 
 # Command to run the application
 CMD ["./youtube_audio_pipeline"]
