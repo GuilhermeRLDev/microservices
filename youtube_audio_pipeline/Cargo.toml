@@ -1,0 +1,18 @@
+[package]
+name = "youtube_audio_pipeline"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+rdkafka = { version = "0.34", features = ["ssl", "sasl"] }
+tokio = { version = "1", features = ["full"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+clap = { version = "4.0", features = ["derive"] } # Will be removed or repurposed
+log = "0.4"
+env_logger = "0.10"
+actix-web = "4"
+actix-multipart = "0.6" # Added actix-multipart
+uuid = { version = "1.0", features = ["v4"] } # Added uuid with v4 feature

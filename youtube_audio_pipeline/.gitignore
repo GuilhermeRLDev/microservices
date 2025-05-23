@@ -1,0 +1,10 @@
+# Ignore Rust build artifacts
+/target/
+
+# Ignore other common files
+.DS_Store
+*.log
+*.lock
+
+# VS Code
+.vscode/
